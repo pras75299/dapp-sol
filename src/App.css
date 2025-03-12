@@ -141,7 +141,8 @@ button:not(:disabled):active {
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   transition: all 0.3s ease !important;
   height: auto !important;
-  padding: 0.75rem 1.5rem !important;
+  min-width: 200px !important;
+  padding: 0 !important;
 }
 
 .wallet-adapter-button:hover {
