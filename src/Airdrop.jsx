@@ -21,7 +21,6 @@ export function Airdrop() {
 
   useEffect(() => {
     getBalance();
-    // Set up an interval to refresh balance every 2 seconds
     const intervalId = setInterval(getBalance, 10000);
     return () => clearInterval(intervalId);
   }, [wallet.publicKey, connection]);
@@ -78,7 +77,7 @@ export function Airdrop() {
   }
 
   return (
-    <div className="airdrop-container">
+    <>
       {wallet.publicKey ? (
         <>
           <div className="wallet-info">
@@ -105,6 +104,6 @@ export function Airdrop() {
       >
         {loading ? "Processing..." : "Airdrop"}
       </button>
-    </div>
+    </>
   );
 }
