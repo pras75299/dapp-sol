@@ -12,16 +12,24 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 import "@solana/wallet-adapter-react-ui/styles.css";
+import "./App.css";
+import { Airdrop } from "./Airdrop";
 
 function App() {
   return (
     <>
-      <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets} autoConnect>
+      <ConnectionProvider
+        endpoint={
+          "https://solana-devnet.g.alchemy.com/v2/AAsuireGss8ZoU0addiRUyVIG5GJE9tw"
+        }
+      >
+        <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
-            <p className="read-the-docs">
-              Click on the Vite and React logos to learn more
-            </p>
+            <div className="wallet-buttons">
+              <WalletMultiButton />
+              <WalletDisconnectButton />
+            </div>
+            <Airdrop />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
